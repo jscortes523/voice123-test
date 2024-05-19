@@ -16,7 +16,7 @@ const SearchResults = ({ results, keywords }) => {
         {results.providers.map(sampleInfo => {
           return (
           <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '1rem', border: '1px'}}
-            className="m-2 rounded-lg shadow-md"
+            className="m-2 bg-white rounded-lg shadow-md"
           >
             <AudioPlayer
               key={sampleInfo.relevant_sample}

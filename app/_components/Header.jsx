@@ -39,6 +39,7 @@ const Header = ({ keywords }) => {
               className="flex-1 rounded-full border-[1px]"
               onChange={handleTextChange}
               onKeyDown={handleKeyPress}
+              value={searchValue}
               InputProps={{
               endAdornment: (
                   <InputAdornment className="-mr-[6px]">

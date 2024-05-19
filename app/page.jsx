@@ -11,7 +11,7 @@ export default async function Home({ searchParams }) {
   const data = await fetchData({ keywords, page });
   return (
     <>
-      <div className='flex flex-col  bg-white'>
+      <div className='flex flex-col bg-lavender-0'>
         <div>
           <Header keywords={keywords} />
         </div>

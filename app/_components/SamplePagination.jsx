@@ -21,8 +21,21 @@ const SamplePagination = ( {totalPages, keywords, page}) => {
       alignItems='center'
     >
       <Pagination
-        className=" bg-voice123-800 rounded-xl shadow-md mx-16"
-        color="primary"
+        aria-current='page'
+        shape='circular'
+        color='primary'
+        sx={{
+          color: '#2196f3',
+          borderRadius: '0.5em',
+          backgroundColor: 'white',
+          '& .Mui-selected': {
+            backgroundColor: '#2196f3 !important', // or any specific color
+            color: 'white !important',
+            '&:hover': {
+              backgroundColor: '#42a5f5 !important',
+            },
+          },
+        }}
         count={totalPages}
         onChange={handleOnChangePage}
         page={currentPage}
