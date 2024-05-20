@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Voice123 Test
 
-## Getting Started
+## Application Setup Guide
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Before you begin, ensure you have met the following requirements:
+- You have installed [Node.js](https://nodejs.org/) (version 20.x or later).
+- You have a package manager installed (npm or yarn).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    ```bash
+    git clone https://github.com/jscortes523/voice123-test.git
+    cd voice123-test
+    ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+    Using npm:
+    ```bash
+    npm install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Or using yarn:
+    ```bash
+    yarn install
+    ```
+### Running the Application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. To start the development environment:
+    ```bash
+    npm run dev
+    yarn dev
+    ```
+2. To start the production environment:
+    ```bash
+    npm run start
+    yarn start
+    ```
 
-## Deploy on Vercel
+## Worklog
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+###  Day 1
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Frameworks and tools selection (3 hour)
+    
+    - ReactJs + Redux, and NodeJS attempt
+    - NextJS + Material UI + Tailwind.
+
+2. Project setup and initial environment configuration (3 hours)
+    
+    - Set up the repository and project structure.
+
+    - Identifying and installing dependencies, specially Material UI ones.
+
+    - Dealing and understanding Material UI issues
+
+    - **.eslintrc.json** settings.
+
+
+3. Implemented basic layout and Header (3h)
+    - Set up **layout.js**
+
+    - Created and styled Header component
+
+    - Connected Header actions to search params
+
+    - Fetched initial data on Home page load
+
+        * Identified **Voice123 API**  response and query string limits
+
+4. Implementing and styling first version of Search result component (1h)
+
+5. Implementing and styling Audio Player component (4h)
+    - Created Media player using Material UI Icon button components
+
+    - Connected useRef hoook to trigger an action in the Media card component
+        * **NOTE:** Most of the sample file URLs in API response are incompleted or broken, I only found these users with a valid URL **5000035** and **240582**, for this reason I hard code a URL inside Audio Player component.
+    
+    - Added custom styles to Icon button component
+
+    - Created function to identify and hihglight the first paragraphs where the keyword was found.
+        * **NOTE:** summary and additional_details properties in the API response were taken as content to be displayed, the reason, some of the results in the query didn't meet the keyword filter.
+        e.g. keyword=game and page=1, the user id **123422** doesn't match the keyword in any of its properties and it is fethed by the query.
+
+
+### Day 2
+1. Implementing and styling Pagination and No result component(2h)
+    - Implemented Material UI Pagination component
+    - Got API headers to set the paginations number of page based on the keyword filter
+    - Styled component overriting the **Mui-selected** class and using aria-curret property to identify the selected page
+    - Added No result component
+
+2. Improving styling in Audio player, Profile summary, Pagination componentns, and Home (1h)
+3. Documentation (2h)
+
+## Future Improvements and Recommendations
+
+### Improvements
+
+* Enhanced Error Handling, and not found response, for a better user experience
+
+* Storybooks, for testing, reusability, documentation, and collaboration
+
+* API request parameters restrictions. The API allows the **size** as a parameter, and a big value breaks the server response, it can impact server performance, and service availability
+
+* Additional features, such as, sorting, more filters options, page size selector 
+
+### Recomendations
+
+* Set up a CI/CD pipeline to automate testing and deployment processes.
+
+* Implement regular code reviews to maintain code quality and share knowledge among team members.
+
+* Maintain comprehensive documentation 
