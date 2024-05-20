@@ -31,6 +31,12 @@ const AudioPlayer = ({ audioFileData }) => {
     }
   };
 
+  const selectFileUrl  = (fileUrl) => {
+    return fileUrl.includes('https')
+      ? fileUrl 
+      : `https://sandbox.voice123.com/samples/luis -  lalaa lalala la.mp3`;
+  };
+
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', p: 2}}>
       <IconButton aria-label="previuos" onClick={() => handleProgress('rewind')}>
@@ -65,7 +71,7 @@ const AudioPlayer = ({ audioFileData }) => {
       </IconButton>
       <CardMedia
         component="audio"
-        src={audioFileData.file}
+        src={selectFileUrl(audioFileData.file)}
         ref={audioRef}
       />
     </Box>

@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography';
-import { getFirstParagraphFirstWordMatches } from '../utils/strings';
+import { getFirstParagraphFirstWordMatches } from '../_utils/strings';
 
 const ProfileSummary = ({ additionalDetails, summary, keywords }) => {
     const firstSummaryParagraph = getFirstParagraphFirstWordMatches(summary, keywords);
